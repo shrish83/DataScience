@@ -33,9 +33,18 @@ sorted_df[which.min(sorted_df$Age), ]
 numeric_rows<-(iris[sapply(iris, is.numeric)])
 
 #q8
-for(x in numeric_rows){
-  
-  res<-tapply(x ,iris$Species, mean)  
-  print(res)
-}
+print("Mean Sepal.Length", quote = FALSE)
+print(tapply(iris$Sepal.Length,iris$Species, mean))  
+print("Mean Sepal.Width", quote = FALSE)
+print(tapply(iris$Sepal.Width,iris$Species, mean))  
+print("Mean Petal.Length", quote = FALSE)
+print(tapply(iris$Petal.Length,iris$Species, mean))  
+print("Mean Petal.Width", quote = FALSE)
+print(tapply(iris$Petal.Width,iris$Species, mean))  
+
+#q17
+
+sapply(numeric_rows,mean)
+
+#q18
 
