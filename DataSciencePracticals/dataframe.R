@@ -46,5 +46,4 @@ print(tapply(iris$Petal.Width,iris$Species, mean))
 
 sapply(numeric_rows,mean)
 
-#q18
-
+#q22 cast and melt

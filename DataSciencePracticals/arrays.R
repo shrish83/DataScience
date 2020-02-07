@@ -36,6 +36,10 @@ rownames(A)<-c("a", "b", "c")
 #q9
 B<-1:12
 B<-matrix(B, nrow=4, byrow=TRUE)
+
+rownames(B)<- letters[1:4]
+colnames(B)<-letters[24:26]
+B
 B1<-matrix(B, nrow=4, byrow=FALSE)
 
 #q10

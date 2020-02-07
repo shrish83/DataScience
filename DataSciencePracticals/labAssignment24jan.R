@@ -4,6 +4,7 @@
 p <- c(2,7,8)
 q <- c("A", "B", "C")
 x<-list(p,q)
+x
 x[2]
 
 #q2
@@ -18,6 +19,7 @@ x
 #q3
 
 a <- list ("x"=5, "y"=10, "z"=15)
+a
 sum(unlist(a))
 
 #q4
@@ -71,7 +73,6 @@ E=c(20:5)
 x<-list(A=A, B=B, C=C)
 y<-list(D=D, E=E)
 z<-list(x=x, y=y)
-
 #part 1
 length(z$x)
 length(z$y)
@@ -79,6 +80,7 @@ length(unlist(z$y))
 
 z[[1]][[2]][3]#g
 z[[1]][[3]]
+z[[2]][[2]][5]
 
 #q12
 y <- list("a", "b", "c")

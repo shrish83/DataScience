@@ -1,21 +1,31 @@
 #1. Count no of NA in a vector
 a<-c(1,2,3,4,NA,23, NA, 1/0, -Inf,Inf)
 length(a)
+a[is.na(a)]
 length(a[is.na(a)])
 x <- c(4,6,5,7,10,9,4,15)
 y <-c(1,2)
 x+y
-#What is the value of:
+#2. What is the value of:
   c(4,6,5,7,10,9,4,15) < 7
   
-digits <- as.character(x)
+#3. Add two vectors
+p<-c(3,5,6,8)
+q<-c(3,3,3)
+p+q
+#4.Output of R statements:
+z<-0:9
+digits <- as.character(z)
 digits<-as.integer(digits)  
   
-#################
+#5.Value of k for:
 x <- c(1,2,3,0)
 y<-(x+2)
 y[(!is.na(x)) & x > 0] -> k
+#6. Value of sum(x[y]):
+x<-c(2,4,6,8)
 y<-c(TRUE, FALSE, TRUE, TRUE)
+sum(x[y])
 sum(x+y)
 x[y]
 
@@ -30,6 +40,7 @@ A-B
 #q2 scalar multiplication
 A
 a3<-3*A
+a3
 #q3 diagonal matrix
 mat<-diag(c(4,1,2,3), 4)
 mat
@@ -44,16 +55,17 @@ t(A)
 det(A)
 #q6 inverse
 inv<-solve(A)
-
+inv
 #q7 solve for x
 x<-inv %*% b
 X<-solve(A,b)
-
+X
 #q8
 x<-c(1:3)
 y<-c(4:6)
 z<-c(7:9)
 A<-cbind(x,y,z)
+A
 rownames(A)<-c("a", "b", "c")
 
 #q9
@@ -68,7 +80,7 @@ colnames(B)<-c("x", "y", "z")
 #q10
 
 subB<-B[2:4, ]
-
+subB
 #q11
 
 3*A
