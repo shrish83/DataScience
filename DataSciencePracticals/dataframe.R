@@ -50,6 +50,7 @@ print(species.wise.mean)
 
 q17<-sapply(numeric_rows, function(x) tapply(x, iris$Species, mean))
 
+<<<<<<< HEAD
 #q18
 is.even<-function(x){
     if(is.na(x)){
@@ -70,3 +71,6 @@ q18<-function(x){
 
 temp<-c(1,0,0,1,1,Inf, Inf, NaN, NA, NA, 1,1)
 print(q18(temp))
+=======
+#q22 cast and melt
+>>>>>>> feb421c90628aeef40243c0ab21213e60bbfbbe5

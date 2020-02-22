@@ -25,7 +25,11 @@ Newlist
 
 #q5
 b <- list(a=1:10, c="Hello", d="AA")
+b$a[-c(2)]
+
+#alternate approach
 b$a[c(1,3:10)]
+
 #q6
 x <- list(a=5:10, c="Hello", d="AA")
 x$z<-"NewItem"
@@ -62,8 +66,9 @@ length(unlist(z$x))
 length(unlist(z$y))
 
 z[[1]][[2]][3]#g
-z[[1]][[3]]
 
+
+z[[2]][[2]][5]
 
 #q12
 y <- list("a", "b", "c")
@@ -72,3 +77,6 @@ y1<-unlist(y)
 q1<-unlist(q)
 
 (ans<-as.list(q1[q1 != y1]))
+
+#alternate approach
+(setdiff(q, y))
