@@ -42,9 +42,31 @@ print(tapply(iris$Petal.Length,iris$Species, mean))
 print("Mean Petal.Width", quote = FALSE)
 print(tapply(iris$Petal.Width,iris$Species, mean))  
 
+#Better way
+species.wise.mean<- apply(iris[,1:4], 2, function(x) tapply(x, iris$Species, mean))
+print(species.wise.mean)
+
 #q17
 
-sapply(numeric_rows,mean)
+q17<-sapply(numeric_rows, function(x) tapply(x, iris$Species, mean))
 
 #q18
+is.even<-function(x){
+    if(is.na(x)){
+      return(NA)
+    }
+    else if((x %% 2) == 0){
+    return(TRUE)
+  }else{
+    return(FALSE) 
+  }
+}
 
+q18<-function(x){
+  x[!is.finite(x)]<-NA
+  output<-sapply(x, is.even)
+  return(output)
+}
+
+temp<-c(1,0,0,1,1,Inf, Inf, NaN, NA, NA, 1,1)
+print(q18(temp))
