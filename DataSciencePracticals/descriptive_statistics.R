@@ -18,6 +18,10 @@ stats_median<-function(x){
 stats_mean<-function(x){
   return(sum(x)/length(x))
 }
+stats_mode<-function(x){
+  val<-ages[max(table(x))]  
+  return(val)
+}
 #part 1
 stats_median(ages[ages < 22])
 
@@ -29,5 +33,9 @@ stats_median(ages)
 stats_mean(ages)
 
 #part 4
+stats_mode(ages)
 
-
+#part5-1
+new.sum<-length(ages)*stats_mean(ages) + 23*2
+new.mean<- new.sum / (length(ages) + 2)
+new.mean

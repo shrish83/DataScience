@@ -49,28 +49,36 @@ print(species.wise.mean)
 #q17
 
 q17<-sapply(numeric_rows, function(x) tapply(x, iris$Species, mean))
+write.csv2(q17, "q17.csv", row.names = FALSE)
 
-<<<<<<< HEAD
 #q18
-is.even<-function(x){
-    if(is.na(x)){
-      return(NA)
-    }
-    else if((x %% 2) == 0){
-    return(TRUE)
-  }else{
-    return(FALSE) 
-  }
-}
+# is.even<-function(x){
+#     if(is.na(x)){
+#       return(NA)
+#     }
+#     else if((x %% 2) == 0){
+#     return(TRUE)
+#   }else{
+#     return(FALSE) 
+#   }
+# }
+# 
+# q18<-function(x){
+#   x[!is.finite(x)]<-NA
+#   output<-sapply(x, is.even)
+#   return(output)
+# }
 
-q18<-function(x){
-  x[!is.finite(x)]<-NA
-  output<-sapply(x, is.even)
-  return(output)
-}
+# temp<-c(1,0,0,1,1,Inf, Inf, NaN, NA, NA, 1,1)
+# print(q18(temp))
 
-temp<-c(1,0,0,1,1,Inf, Inf, NaN, NA, NA, 1,1)
-print(q18(temp))
-=======
-#q22 cast and melt
->>>>>>> feb421c90628aeef40243c0ab21213e60bbfbbe5
+
+#q22
+#install.packages(c("reshape", "reshape2"))
+library(reshape2)
+
+iris
+melted.iris<-melt(df, id.vars = "Species")
+melted.iris
+casted.iris<-cast(melted.iris)
+casted.iris  
