@@ -35,7 +35,42 @@ stats_mean(ages)
 #part 4
 stats_mode(ages)
 
-#part5-1
-new.sum<-length(ages)*stats_mean(ages) + 23*2
-new.mean<- new.sum / (length(ages) + 2)
-new.mean
+#part5-1 different approach
+#new.sum<-length(ages)*stats_mean(ages) + 23*2
+#(new.mean<- new.sum / (length(ages) + 2))
+
+new.ages<-c(ages, 23, 23)
+#part 1.5-1 
+(new.mean<-stats_mean(new.ages))
+
+#part 1.5-2
+(new.median<-stats_median(new.ages))
+
+#part 1.5-3
+(new.mode<-stats_mode(new.ages))
+
+
+#q12
+d<-vector()
+midpoints<-seq(95.5, 175.5, 10)
+freq<-c(5,8,22,27,17,9,5,5,2)
+for(i in 1:length(midpoints)){
+   d<-c(d, rep(midpoints[i],freq[i]))
+}
+
+data_range<-diff(range(d))
+data_variance<-var(d)
+data_std<-sd(d)
+data_meand<-mad(d, center = mean(d))
+
+#q13
+sample40<-sample(1:6, 40, replace = TRUE)
+
+
+#interquantile deviation
+
+iqd<-function(data, a, b){
+  q<-quantile(data, c(a/100, b/100))
+  return(as.numeric(abs(diff(q))))
+}
+iqd(sample40, 10, 60)
