@@ -64,13 +64,28 @@ data_std<-sd(d)
 data_meand<-mad(d, center = mean(d))
 
 #q13
+fdist<-function(d){
+  df<-as.data.frame(table(d))
+  colnames(df)<-c("Face", "Frequency")
+  prob<-df[,2] / sum(df$Frequency)
+  return(cbind(df40, prob))  
+}
+
 sample40<-sample(1:6, 40, replace = TRUE)
+sample70<-sample(1:6, 70, replace = TRUE)
+sample100<-sample(1:6, 100, replace = TRUE)
+
+fdist(sample40)
+fdist(sample70)
+fdist(sample100)
+
+##inference-> As the sample size increases, the probablity reaches absolute probability that is 1/6
 
 
 #interquantile deviation
 
 iqd<-function(data, a, b){
-  q<-quantile(data, c(a/100, b/100))
+  q<-quantile(data, c(a/(10 ^nchar(a)), b/(10 ^nchar(b))))
   return(as.numeric(abs(diff(q))))
 }
 iqd(sample40, 10, 60)
