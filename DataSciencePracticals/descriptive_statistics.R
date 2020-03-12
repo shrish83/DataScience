@@ -68,7 +68,7 @@ fdist<-function(d){
   df<-as.data.frame(table(d))
   colnames(df)<-c("Face", "Frequency")
   prob<-df[,2] / sum(df$Frequency)
-  return(cbind(df40, prob))  
+  return(cbind(df, prob))  
 }
 
 sample40<-sample(1:6, 40, replace = TRUE)
