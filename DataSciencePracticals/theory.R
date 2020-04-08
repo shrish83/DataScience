@@ -62,7 +62,7 @@ p<-prop.test(100,300,p = 0.3)
 ## If p value came out to be less than 0.02 which will be less than 0.05(or 5% confidence level), then we reject the null hypothesis, and conclude that there's a significant difference between actual and proposed probabilities
 
 #q10 Give R command to combine multiple strings like “Data”, “Science”, “in” ,“R”, “Programming” as a single string “Data_Science_in_R_Programmming” ? 
-paste("Data", "Science", "in", "R", sep = "_")
+paste("Data", "Science", "in", "R", "Programming", sep = "_")
 
 #q11 What is the difference between "%%" and "%/%"? 
 # %% is the modulus operator. It returns the remainder on dividing A by B.
